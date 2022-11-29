@@ -1,0 +1,60 @@
+<nav class="navbar">
+    <div class="nav-menu flex-row">
+        <div class="nav-brand">
+            <a href="#" class="text-gray">Travel</a>
+        </div>
+        <div class="toggle">
+            <div class="toggle-icons">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div>
+            <ul class="nav-item">
+                <li class="nav-link">
+                    <a href="/">Home</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#catagory">Catagory</a>
+                </li>
+                <!-- <li class="nav-link">
+                    <a href="#">Archive</a>
+                </li> -->
+                <!-- <li class="nav-link">
+                    <a href="#">Pages</a>
+                </li> -->
+                <li class="nav-link">
+                    <a href="#contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <% if(token==null) { %>
+            <div>
+                <ul class="nav-item">
+                    <li class="nav-link">
+                        <a href="/login">Login</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/login">Signup</a>
+                    </li>
+                </ul>
+            </div>
+            <% } else{ %>
+
+                <div>
+                    <ul class="nav-item">
+                        <li class="nav-link">
+                            Login as <a href="/user/profile" class="usercap">
+                                <%= user_info.name %>
+                            </a>
+                        </li>
+                            <li class="nav-link">
+                                <a href="/user/write">Write Post</a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/user/logout">Logout</a>
+                            </li>
+                        </ul>
+                </div>
+                <% } %>
+    </div>
+</nav>

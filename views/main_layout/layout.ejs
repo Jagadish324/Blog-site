@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooger</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abel&family=Baloo+Bhai+2&family=Montserrat:wght@300&family=Open+Sans:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div id="flashdiv">
+        <%if(messages !=null && messages.success){%>
+            <div class="Successalert">
+                <span class="closebtn" onclick="this.parentElement.style.display ='none';">&times;</span>
+                <strong><i class="fa-regular fa fa-face-smile"></i>Success!</strong>
+                <%= messages.success%>
+            </div>
+        <%}%>
+        
+        <%if(messages !=null && messages.error){%>
+            <div class="Erroralert">
+                <span class="closebtn" onclick="this.parentElement.style.display ='none';">&times;</span>
+                <strong><i class="fa-regular fa fa-face-sad-cry"></i>Error!</strong>
+                <%= messages.error%>
+            </div>
+        <%}%>
+    </div>
+</body>
+</html>   
+
+<script>
+    setTimeout(()=>{
+        let flashdiv = document.getElementById('flashdiv');
+        if(flashdiv != null){
+            flashdiv.remove();
+        }
+    }, 3000);
+</script>

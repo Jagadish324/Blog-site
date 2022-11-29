@@ -1,0 +1,57 @@
+<%- include ('main_layout/layout') %>
+<%- include ('partial/navbar') %>
+    <main>
+        <form action="/user/write" method="post" enctype="multipart/form-data">
+            <div class="write_post">
+
+                <div class="comment-1">
+                    <h1 class="write-title">New Post</h1>
+                    <input id="comment" type="text" name="title" placeholder="Post Title">
+                    <textarea id="tx" cols="20" rows="20" name="description" placeholder="Describtion..."></textarea>
+                </div>
+                <div class="comment-2">
+                    <div class="comment-2-1">
+
+                        <label for="avatar">Choose a picture:</label>
+
+                        <input type="file" id="avatar" name="blog_image" accept="image/png, image/jpeg">
+                        <button id="btn-comment" type="submit">Publish</button>
+                    </div>
+                    <div class="comment-2-2">
+                        <h1 class="catagory-title">Catagory</h1>
+                        <div>
+                            <input type="radio" id="science" name="category" value="science">
+                            <label for="science" class="catagory">Science</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="food" name="category" value="food">
+                            <label for="food" class="catagory">Food</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="festival" name="category" value="festival">
+                            <label for="festival" class="catagory">Festival</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="place" name="category" value="place">
+                            <label for="place" class="catagory">Place</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="flowers" name="category" value="flowers">
+                            <label for="flowers" class="catagory">Flowers</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="life_style" name="category" value="life style">
+                            <label for="life_style" class="catagory">Life style</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="fashion" name="category" value="fashion">
+                            <label for="fashion" class="catagory">Fashion</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <%- include ('partial/footer') %>

@@ -1,0 +1,34 @@
+<%- include ('main_layout/layout') %>
+    <%- include ('partial/navbar') %>
+        <main>
+            <form action="/user/update/profile" method="post" enctype="multipart/form-data">
+                <h1 class="profile_head">Profile</h1>
+                <button id="btn-comment" class="profile_btn"><a id="profile-btn1"href="/user/mypost"> see post</a></button>
+                <div class="profile_box">
+                    <center><img
+                            src="/assets/user-profile/<%= user_data.profile_image %>"
+                            alt="img" class="profile-img"></center>
+                    <div class="profile">
+                        <div class="profile-lable">
+                            <label for="name">Name:</label>
+                            <label for="email">Gmail:</label>
+                            <label for="mobile">Mobile No:</label>
+                            <label for="Role">Role:</label>
+                            <label for="Profile_img">Profile img:</label>
+                        </div>
+                        <div class="profile_input">
+                            <input type="text" placeholder="" name="name" value="<%= user_data.name %>">
+                            <input type="email" placeholder="" name="email" value="<%= user_data.email %>">
+                            <input type="text" placeholder="" name="phone" value="<%= user_data.phone %>">
+                            <select name="Role" id="Role">
+                                <option value="user" <%=user_data.role=="user" ? "selected" : "" %> >User</option>
+                                <option value="admin" <%=user_data.role=="admin" ? "selected" : "" %>>Admin</option>
+                            </select>
+                            <input type="file" id="Profile_img" name="profile_img" accept="image/png, image/jpeg">
+                        </div>
+                    </div>
+                    <center><button id="btn-comment" type="submit" class="btn-profile">Update</button></center>
+                </div>
+            </form>
+
+            <%- include ('partial/footer') %>

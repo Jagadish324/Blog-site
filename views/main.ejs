@@ -1,0 +1,232 @@
+<%- include ('main_layout/layout') %>
+<%- include ('partial/navbar') %>
+<main>
+    <!-- first section -->
+    <section class="title">
+        <div class="site-bg" data-aos="fade-up" data-aos-delay="150">
+            <h3>Tour & Travels</h3>
+            <h1>Amazing Place on West Bengal</h1>
+            <button class="btn">Explore</button>
+        </div>
+    </section>
+    <!-- second section -->
+    <section>
+        <div class="blog">
+            <div class="container">
+                <div class="owl-carousel owl-theme blog-post">
+                    <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                        <img src="./assets/Blog-post/post-1.jpg" alt="post-1" srcset="">
+                        <div class="blog-title">
+                            <h3>West Bengal Foods</h3>
+                            <button class="btn btn-blog">More</button>
+                            <span>2 minitues</span>
+                        </div>
+                    </div>
+                    <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
+                        <img src="./assets/Blog-post/post-3.jpg" alt="post-1" srcset="">
+                        <div class="blog-title">
+                            <h3>West Bengal Festivals</h3>
+                            <button class="btn btn-blog">More</button>
+                            <span>2 minitues</span>
+                        </div>
+                    </div>
+                    <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
+                        <img src="./assets/Blog-post/post-4.png" alt="post-1" srcset="">
+                        <div class="blog-title">
+                            <h3>West Bengal Fashion Style</h3>
+                            <button class="btn btn-blog">More</button>
+                            <span>2 minitues</span>
+                        </div>
+                    </div>
+                    <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                        <img src="./assets/Blog-post/post-5.png" alt="post-1" srcset="">
+                        <div class="blog-title">
+                            <h3>West Bengal Popular Places</h3>
+                            <button class="btn btn-blog">More</button>
+                            <span>2 minitues</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-navigation">
+                    <span class="owl-nav-prev">
+                        <i class="fas fa-long-arrow-alt-left"></i>
+                    </span>
+                    <span class="owl-nav-next">
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- site content -->
+
+    <section class="container">
+        <div class="site-content">
+            <div class="post">
+                <%if(blog_dat != null){%>
+                    <%for(let i in blog_dat){%>
+                <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="post-img">
+                        <div>
+                            <img src="./assets/Blog-post/<%=blog_dat[i].blog_image%>" alt="blog" class="img">
+                        </div>
+                        <div class="post-info flex-row">
+                            <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;<%=blog_dat[i].username%></span>
+                            <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 10,2022</span>
+                        </div>
+                    </div>
+                    <div class="post-title">
+                        <a href="#"  class="visible-content"> <%=blog_dat[i].title %></a>
+                        <br>
+                        <p class="invisibe-content"> <%=blog_dat[i].description%>
+                        </p>
+                        <button class="btn post-btn" id="btn-post">Read More&nbsp;<i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <hr>
+                <%}%>
+
+                <%}else{%>
+                    <div class="post-title">No Data Found!</div>
+                <%}%>
+                <div class="pagination flex-row">
+                    <a href="#"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="pages">1</a>
+                    <a href="#" class="pages">2</a>
+                    <a href="#" class="pages">3</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <aside class="side-bar">
+                <div class="catagory" id="catagory">
+                    <h2>Catagory</h2>
+                    <ul class="catagory-list">
+                        <li class="list-item" data-aos="fade-left" data-aos-delay="100">
+                            <a href="#">Food</a>
+                        </li>
+                        <li class="list-item" data-aos="fade-left" data-aos-delay="200">
+                            <a href="#">Festivals</a>
+                        </li>
+                        <li class="list-item" data-aos="fade-left" data-aos-delay="300">
+                            <a href="#">Life-Style</a>
+                        </li>
+                        <li class="list-item" data-aos="fade-left" data-aos-delay="400">
+                            <a href="#">Culture</a>
+                        </li>
+                        <li class="list-item" data-aos="fade-left" data-aos-delay="500">
+                            <a href="#">Fashion</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="popular">
+                    <h2>Popular post</h2>
+                    <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                        <div class="post-img">
+                            <div>
+                                <img src="./assets/popular-post/m-blog-2.jpg" alt="blog" class="img">
+                            </div>
+                            <div class="post-info flex-row">
+
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January
+                                    25,2022</span>
+                                <span>5 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                        </div>
+                    </div>
+                    <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+                        <div class="post-img">
+                            <div>
+                                <img src="./assets/popular-post/m-blog-1.jpg" alt="blog" class="img">
+                            </div>
+                            <div class="post-info flex-row">
+
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January
+                                    25,2022</span>
+                                <span>5 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                        </div>
+                    </div>
+                    <div class="post-content" data-aos="flip-up" data-aos-delay="400">
+                        <div class="post-img">
+                            <div>
+                                <img src="./assets/popular-post/m-blog-3.jpg" alt="blog" class="img">
+                            </div>
+                            <div class="post-info flex-row">
+
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January
+                                    25,2022</span>
+                                <span>5 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                        </div>
+                    </div>
+                    <div class="post-content" data-aos="flip-up" data-aos-delay="500">
+                        <div class="post-img">
+                            <div>
+                                <img src="./assets/popular-post/m-blog-4.jpg" alt="blog" class="img">
+                            </div>
+                            <div class="post-info flex-row">
+
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January
+                                    25,2022</span>
+                                <span>5 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                        </div>
+                    </div>
+                    <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                        <div class="post-img">
+                            <div>
+                                <img src="./assets/popular-post/m-blog-5.jpg" alt="blog" class="img">
+                            </div>
+                            <div class="post-info flex-row">
+
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January
+                                    25,2022</span>
+                                <span>5 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                    <h2>Newsletter</h2>
+                    <div class="form-element">
+                        <input type="text" class="input-element" placeholder="Email">
+                        <button class="btn form-btn">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                <div class="popular-tags" >
+                    <h2>Popular Tags</h2>
+                    <div class="tags flex-row">
+                        <span class="tag" data-aos="flip-up" data-aos-delay="100">Food</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="200">Festival</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="300">Places</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="400">Life Style</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="500">Flowers</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="600">Fashion</span>
+                        <span class="tag" data-aos="flip-up" data-aos-delay="700">Durga Puja</span>
+                        </span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+    <!-- XX site content XX-->
+</main>
+<%- include ('partial/footer') %>

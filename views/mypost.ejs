@@ -1,0 +1,82 @@
+<%- include ('main_layout/layout') %>
+    <%- include ('partial/navbar') %>
+        <main>
+            <form>
+
+                <h1 class="myfont">All Posts</h1>
+                <div class="profile_box">
+                    <div class="mypostf">
+                        <% if(post_data !=null){ %>
+                            <% if(user_data.role =="admin" ){ %>
+                                <div class="profile1">
+                                    <div class="title-pro">
+                                        <h2>Title</h2>
+                                        <% for(let i in post_data){ %>
+                                            <li class="linka2">
+                                                <a href="#">
+                                                    <%= post_data[i].title %>
+                                                </a>
+                                            </li>
+                                        <% } %>
+                                    </div>
+
+                                    <div class="editp">
+                                        <h2>Action</h2>
+                                        <% for(let i in post_data){ %>
+                                            <% if(user_data._id == post_data[i].userID){ %>
+<!--                                                    <div class="editp2"> -->
+                                                    <span class="editp1">
+                                                      <a href="/user/edit/post/<%= post_data[i]._id %>">
+                                                          <i class="fa-solid fa-pen-to-square"></i>
+                                                          </a>
+                                                    <% } %>
+                                            <a onclick="deletePost('<%= post_data[i]._id%>')" class="editp-10">
+                                                &nbsp;<i class="fa-solid fa-trash" style="color: red;"></i>
+                                            </a>
+                                        </span>
+                                    <!-- </div> -->
+                                        <% } %>
+                                    </div>
+                                </div>
+                               <% } else{%>
+                                <div class="profile1">
+                                    <div class="title-pro">
+                                        <h2>Title</h2>
+                                        <% for(let i in post_data){ %>
+                                            <li class="linka2">
+                                                <a href="#">
+                                                    <%= post_data[i].title %>
+                                                </a>
+                                            </li>
+                                        <% } %>
+                                    </div>
+
+                                    <div class="editp">
+                                        <h2>Action</h2>
+                                        <% for(let i in post_data){ %>
+                                            <li class="editp1">
+                                                <a href="/user/edit/post/<%= post_data[i]._id %>">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </a>
+                                            </li>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <% } %> 
+                        <% } else{ %>
+                            <p>No data found!</p>
+                        <% } %>
+                    </div>
+            </form>
+            
+        </main>
+        <script>
+            function deletePost(postID) {
+                if (window.confirm('Do you want to delete this record?')) {
+                    console.log(postID)
+                    window.location.href = `${window.location.protocol}//${window.location.host}/user/delete/post/${postID}`;
+                }
+            }
+        </script>
+
+        <%- include ('partial/footer') %>
